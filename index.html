@@ -13,78 +13,91 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #fff;
-            padding: 20px;
-            max-width: 1400px;
+            background: #fafafa;
+            padding: 40px 20px;
+            max-width: 1200px;
             margin: 0 auto;
+            color: #1a1a1a;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
         }
 
         h1 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            font-weight: 500;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin: 0;
         }
 
         .input-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: 20px;
+            margin-bottom: 24px;
         }
 
         .input-box h3 {
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         textarea {
             width: 100%;
-            height: 200px;
-            border: 1px solid #ccc;
-            padding: 12px;
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            font-size: 12px;
-            line-height: 1.5;
+            height: 240px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
             resize: vertical;
             outline: none;
+            background: #fff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         textarea:focus {
-            border-color: #666;
+            border-color: #333;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
         }
 
-        .button-container {
-            margin-bottom: 20px;
-        }
-
-        button {
-            background: #333;
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #000;
+        .view-toggle {
+            display: inline-flex;
+            background: #fff;
+            border-radius: 8px;
+            padding: 4px;
+            border: 1px solid #e0e0e0;
         }
 
         .toggle-btn {
-            background: #fff;
-            color: #333;
-            border: 1px solid #ccc;
-            padding: 6px 16px;
+            background: transparent;
+            color: #666;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
             font-size: 13px;
+            font-weight: 500;
             cursor: pointer;
-            margin-right: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .toggle-btn:hover {
+            color: #1a1a1a;
         }
 
         .toggle-btn.active {
-            background: #333;
+            background: #1a1a1a;
             color: #fff;
-            border-color: #333;
         }
 
         .result-container {
@@ -92,59 +105,76 @@
         }
 
         .result-container h3 {
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .diff-output {
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            font-size: 12px;
-            line-height: 1.6;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
             white-space: pre-wrap;
             word-wrap: break-word;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
         }
 
         .diff-output .added {
-            background: #d4edda;
-            color: #155724;
+            background: #e6f7e6;
+            color: #0d5f0d;
+            padding: 2px 0;
         }
 
         .diff-output .removed {
-            background: #f8d7da;
-            color: #721c24;
+            background: #ffe6e6;
+            color: #b30000;
+            padding: 2px 0;
             text-decoration: line-through;
+        }
+
+        .diff-output .unchanged {
+            color: #4a4a4a;
         }
 
         .split-view {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 20px;
         }
 
         .split-pane {
-            border: 1px solid #eee;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fff;
+            overflow: hidden;
         }
 
         .line-numbers {
-            background: #f5f5f5;
+            background: #f8f8f8;
             color: #999;
-            padding: 8px;
+            padding: 10px 12px;
             text-align: right;
-            font-size: 11px;
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            line-height: 1.6;
+            font-size: 12px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+            line-height: 1.8;
             user-select: none;
+            border-right: 1px solid #e0e0e0;
         }
 
         .line-content {
-            padding: 8px 12px;
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            font-size: 12px;
-            line-height: 1.6;
+            padding: 10px 16px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
             white-space: pre-wrap;
             word-wrap: break-word;
-            min-height: 19.2px;
+            min-height: 23.4px;
         }
 
         .line-row {
@@ -152,48 +182,95 @@
         }
 
         .line-row.added .line-numbers {
-            background: #c3e6cb;
-            color: #155724;
+            background: #d4f4d4;
+            color: #0d5f0d;
         }
 
         .line-row.added .line-content {
-            background: #d4edda;
-            color: #155724;
+            background: #e6f7e6;
+            color: #0d5f0d;
         }
 
         .line-row.removed .line-numbers {
-            background: #f5c6cb;
-            color: #721c24;
+            background: #ffd4d4;
+            color: #b30000;
         }
 
         .line-row.removed .line-content {
-            background: #f8d7da;
-            color: #721c24;
+            background: #ffe6e6;
+            color: #b30000;
         }
 
         .line-row.unchanged .line-numbers {
-            background: #f5f5f5;
+            background: #f8f8f8;
         }
 
         .line-row.unchanged .line-content {
             background: #fff;
+            color: #4a4a4a;
         }
 
         .line-row.empty .line-numbers {
-            background: transparent;
+            background: #fafafa;
         }
 
         .line-row.empty .line-content {
-            background: transparent;
+            background: #fafafa;
         }
 
         .hidden {
             display: none;
         }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 13px;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .input-container,
+            .split-view {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 24px 16px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Secret Key Diff Tool</h1>
+    <div class="header">
+        <h1>Secret Key Diff Tool</h1>
+        <div class="view-toggle hidden" id="viewToggle">
+            <button class="toggle-btn active" id="inlineBtn" onclick="setView('inline')">Inline View</button>
+            <button class="toggle-btn" id="splitBtn" onclick="setView('split')">Split View</button>
+        </div>
+    </div>
 
     <div class="input-container">
         <div class="input-box">
@@ -206,41 +283,117 @@
         </div>
     </div>
 
-    <div class="button-container">
-        <button onclick="compareTexts()">Compare Keys</button>
-    </div>
-
-    <div class="view-toggle hidden" id="viewToggle">
-        <button class="toggle-btn active" id="inlineBtn" onclick="setView('inline')">Inline View</button>
-        <button class="toggle-btn" id="splitBtn" onclick="setView('split')">Split View</button>
-    </div>
-
     <div class="result-container" id="result">
         <h3>Differences</h3>
         <div class="diff-output" id="diffOutput"></div>
-        <div class="split-view hidden" id="splitOutput">
-            <div class="split-pane" id="splitLeft"></div>
-            <div class="split-pane" id="splitRight"></div>
+            <div class="split-view hidden" id="splitOutput">
+                <div class="split-pane" id="splitLeft"></div>
+                <div class="split-pane" id="splitRight"></div>
+            </div>
         </div>
+
+        <footer>
+            <a href="https://github.com/MayankSingamreddy/SecureTextDiff" target="_blank">View the github repo: github.com/MayankSingamreddy/SecureTextDiff</a><br>
+            <a href="https://singamreddy.com/" target="_blank">More about me: singamreddy.com/</a>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js"></script>
     <script>
         let currentView = 'inline';
         let diffResult = null;
+        let compareTimeout = null;
+
+        // Auto-compare on text change
+        document.addEventListener('DOMContentLoaded', function() {
+            const text1 = document.getElementById('text1');
+            const text2 = document.getElementById('text2');
+            
+            function scheduleCompare() {
+                clearTimeout(compareTimeout);
+                compareTimeout = setTimeout(compareTexts, 500);
+            }
+            
+            text1.addEventListener('input', scheduleCompare);
+            text2.addEventListener('input', scheduleCompare);
+        });
+
+        function parseEnvVars(text) {
+            const lines = text.split('\n');
+            const envMap = new Map();
+            const orderList = [];
+            
+            lines.forEach((line, index) => {
+                const trimmed = line.trim();
+                // Skip empty lines and comments
+                if (!trimmed || trimmed.startsWith('#')) {
+                    orderList.push({ type: 'non-var', content: line, index });
+                    return;
+                }
+                
+                // Match VAR_NAME=value pattern
+                const match = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)=/);
+                if (match) {
+                    const varName = match[1];
+                    envMap.set(varName, { line, index });
+                    orderList.push({ type: 'var', name: varName, content: line, index });
+                } else {
+                    orderList.push({ type: 'non-var', content: line, index });
+                }
+            });
+            
+            return { envMap, orderList };
+        }
 
         function compareTexts() {
             const text1 = document.getElementById('text1').value;
             const text2 = document.getElementById('text2').value;
             
             if (!text1 && !text2) {
-                alert('Please enter text in at least one field');
+                const resultContainer = document.getElementById('result');
+                const viewToggle = document.getElementById('viewToggle');
+                resultContainer.style.display = 'none';
+                viewToggle.classList.add('hidden');
                 return;
             }
 
-            const lines1 = text1.split('\n');
-            const lines2 = text2.split('\n');
-            diffResult = Diff.diffLines(text1, text2);
+            const parsed1 = parseEnvVars(text1);
+            const parsed2 = parseEnvVars(text2);
+            
+            // Build aligned diff result
+            diffResult = [];
+            const processedVars = new Set();
+            
+            // Process in order of first text
+            parsed1.orderList.forEach(item => {
+                if (item.type === 'non-var') {
+                    // Comments and empty lines - just show as-is
+                    diffResult.push({ value: item.content + '\n', added: false, removed: false });
+                } else {
+                    processedVars.add(item.name);
+                    const var2 = parsed2.envMap.get(item.name);
+                    
+                    if (!var2) {
+                        // Variable removed in text2
+                        diffResult.push({ value: item.content + '\n', removed: true });
+                    } else if (item.content !== var2.line) {
+                        // Variable exists in both but different - show diff
+                        diffResult.push({ value: item.content + '\n', removed: true });
+                        diffResult.push({ value: var2.line + '\n', added: true });
+                    } else {
+                        // Identical
+                        diffResult.push({ value: item.content + '\n', added: false, removed: false });
+                    }
+                }
+            });
+            
+            // Add any variables that are only in text2
+            parsed2.orderList.forEach(item => {
+                if (item.type === 'var' && !processedVars.has(item.name)) {
+                    diffResult.push({ value: item.content + '\n', added: true });
+                }
+            });
+            
             const resultContainer = document.getElementById('result');
             const viewToggle = document.getElementById('viewToggle');
             
