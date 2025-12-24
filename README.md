@@ -1,4 +1,4 @@
-# Secret Key Diff Tool
+# SecureTextDiff
 
 A simple, secure, client-side tool for comparing secret keys and sensitive strings at the character level. All processing happens locally in your browser — no data is ever sent to a server.
 
